@@ -1,0 +1,20 @@
+<div>
+  <label>Animal Name:</label> <input #name />
+  <br>
+  <button (click)="add(name.value); name.value='';">
+    Add
+  </button>
+</div>
+
+<md-card >
+  <md-card-header>
+    <md-card-title>Nearby Reports</md-card-title>
+  </md-card-header>
+  <md-list>
+    <md-list-item *ngFor="let report of reports" (click)="gotoDetail(report)">
+      <md-icon md-list-icon>pets</md-icon>
+      <h4 md-line>{{report.animalName}} </h4>
+      <!--<p md-line> location ({{report.gpsLocation.x}}, {{report.gpsLocation.y}}) </p>-->
+    </md-list-item>
+  </md-list>
+</md-card>
